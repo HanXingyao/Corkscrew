@@ -13,7 +13,7 @@ with open('demo.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 # 使用正则表达式将文本拆分为长度为2到5的短语
-phrases = re.findall(r'\b[\w\s]{10,25}\b', text)
+phrases = re.findall(r'\b[\w\s]{10,50}\b', text)
 phrases = [phrase.lower() for phrase in phrases]
 print('Phrase Num:', len(phrases))
 
@@ -52,5 +52,5 @@ plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.tight_layout()
-plt.savefig('wordcloud.png')
+# plt.savefig('wordcloud.png')
 plt.show()
